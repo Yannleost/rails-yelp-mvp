@@ -1,1 +1,35 @@
-<h1>  ok </h1>
+<h1> Create a new restaurant  </h1>
+
+<%= form_for(@restaurant) do |f| %>
+
+  <% if @restaurant.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% @restaurant.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br />
+
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+  <br />
+
+  <%= f.label :phone_number %>
+  <%= f.text_field :phone_number %>
+  <br />
+
+  <%= f.label :category %>
+  <%= f.text_field :category %>
+  <br />
+
+  <%= f.submit %>
+<% end %>
+
+
