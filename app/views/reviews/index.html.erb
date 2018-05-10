@@ -1,8 +1,12 @@
 <h1><%= @restaurant.name %> </h1>
 <% @reviews.each do |review| %>
-<%= review.content %>
-<%= review.rating %>
+<p><b>ils ont dit:</b> <%= review.content %> </p>
+<p> note : <%= review.rating %> </p>
+<br />
 <% end %>
 <br />
 <%= link_to "New rating", new_restaurant_review_path %>
+<br />
+<%= link_to "back to restaurants", restaurants_path %>
+
 
